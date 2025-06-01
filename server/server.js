@@ -11,8 +11,9 @@ const PORT = process.env.PORT || 4000;
 
 //create express app and http server
 const app = express();
-const server = http.createServer(app);
 
+const server = http.createServer(app);
+app.use(cors());
 //initialize socket.io server
 export const io = new Server(server, {
   cors: { origin: "*" },
@@ -36,7 +37,7 @@ io.on("connection", (socket) => {
 
 //Middleware setup
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
+
 app.use("/api/auth", userRouter);
 app.use("/api/messages", messageRouter);
 
