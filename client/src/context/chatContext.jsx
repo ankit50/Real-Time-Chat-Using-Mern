@@ -39,16 +39,16 @@ export const ChatProvider = ({ children }) => {
   const sendMessage = async (messageData) => {
     try {
       const { data } = await axios.post(
-        `/api/messages/${selectedUser._id}`,
+        `/api/messages/send/${selectedUser._id}`,
         messageData
       );
       if (data.success) {
         setMessages((prevMessages) => [...prevMessages, data.newMessage]);
       } else {
-        toast.error(data.messages);
+        toast.error(data.message);
       }
     } catch (error) {
-      toast.error(error.messages);
+      toast.error(error.message);
     }
   };
   //function to subscriber to messages for selected users

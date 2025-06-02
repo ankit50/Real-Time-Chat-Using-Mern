@@ -35,17 +35,20 @@ export const getMessages = async (req, res) => {
   try {
     const { id: selectedUserId } = req.params;
     const myId = req.user._id;
+
     const messages = await Message.find({
       $or: [
         { senderId: myId, receiverId: selectedUserId },
         { senderId: selectedUserId, receiverId: myId },
       ],
     });
-    await Message.updateMany(
+
+    const s = await Message.updateMany(
       { senderId: selectedUserId, receiverId: myId },
       { seen: true }
     );
-    re.json({ success: true, messages });
+
+    res.json({ success: true, messages });
   } catch (error) {
     res.json({ success: false, message: error.message });
     console.log(error.message);
