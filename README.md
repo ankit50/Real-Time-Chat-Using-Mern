@@ -2,6 +2,18 @@
 
 A real-time chat application built with the **MERN stack** (MongoDB, Express, React, Node.js) and **Socket.IO**. It features secure user authentication, live messaging, typing indicators, image sharing in chat, and a responsive modern UI.
 
+### 🔐 Login Page
+
+![Login](client/src/assets/login.png)
+
+### 💬 Chat Interface
+
+![Chat](client/src/assets/chat.png)
+
+### 📷 Image Sharing
+
+![Image Sharing](client/src/assets/image-sharing.png)
+
 ## 🚀 Features
 
 - 🔒 **User Authentication** (JWT-based)
@@ -18,5 +30,3 @@ A real-time chat application built with the **MERN stack** (MongoDB, Express, Re
 - **Backend**: Node.js, Express.js, MongoDB, Socket.IO
 - **Database**: MongoDB (Mongoose ODM)
 - **Authentication**: JWT & Bcrypt
-
-
