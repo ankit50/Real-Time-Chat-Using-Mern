@@ -19,5 +19,4 @@ A real-time chat application built with the **MERN stack** (MongoDB, Express, Re
 - **Database**: MongoDB (Mongoose ODM)
 - **Authentication**: JWT & Bcrypt
 
-## 📁 Project Structure
 
